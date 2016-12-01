@@ -1,0 +1,50 @@
+.form
+    background: $color_white
+    border-radius: 5px
+    padding: 20px
+    box-shadow: 0 0 2px rgba($color_dark, .2)
+    position: absolute
+    top: 5px
+    right: 5px
+    z-index: 110
+    @extend .animateRight
+    animation-delay: 0.9s
+
+    &__input
+        border-radius: 5px
+        border: 1px solid $color_gray
+        min-width: 250px
+        padding: 10px;
+        box-sizing: border-box
+        outline: none
+
+    &__button
+        border-radius: 5px
+        background $color_mint
+        padding: 0 10px;
+        height: 36px
+        box-sizing: border-box
+        outline: none
+        border: 1px solid transparent
+        color: $color_white
+        margin: 0 0 0 10px
+        text-transform: uppercase
+
+    &__button_pink
+        background: $color_pink
+
+/* media query */
+@media $media_tablet
+
+    .form
+        &__input
+            min-width: 66%
+
+
+@media $media_mobile
+
+    .form
+        margin-bottom: 20px
+
+        &__input
+            min-width: 100%

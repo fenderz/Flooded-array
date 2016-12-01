@@ -1,0 +1,68 @@
+.list
+    $selector = selector()
+    border-left: 1px solid $color_dark
+    border-bottom: 1px solid $color_dark
+    height: 250px
+    font-family: $fontRoboto
+    box-sizing: border-box
+    padding-bottom: 3px
+
+    &__item
+        position: relative
+        padding: 5px
+        background: $color_pink
+        box-sizing: border-box
+        display inline-block
+        vertical-align: bottom
+        text-align: center
+        border-radius: 3px
+        font-weight: 500
+        font-size: 14px
+        margin-left: 3px
+        width: 30px
+        color: $color_dark
+        @extend .animateHeight
+
+        &_flood
+            background: $color_mint
+            transition: background 1s ease 6s
+
+        &:after
+            content: ''
+            height: 100%
+            display: inline-block
+            vertical-align: bottom
+
+        &-submerged
+            position: absolute
+            width: 100%
+            background: #82e0ff
+            bottom: 100%
+            left: 0
+            border-radius: 3px
+            transition: height 1s ease 7s
+
+    &:after
+        content ''
+        height 100%
+        display inline-block
+        vertical-align: bottom
+
+.hide-drowned
+    .list__item-submerged
+        height 0 !important
+
+    .list__item_flood
+        background: $color_pink
+
+    .volume
+        opacity: 0
+
+.drop
+    background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+    background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+    width: 1px
+    height: 89px;
+    position: absolute
+    bottom: 200px
+    animation: fall .63s linear infinite
